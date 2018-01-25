@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>React - Working with Components!</title>
+	<script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+
+<body>
+	<div id="container"></div>
+  	<script type="text/babel">
+
+  		class HelloWorld extends React.Component {
+  			render() {
+       			return <p>Hello, {this.props.greetTarget}!</p>
+    		}
+ 
+		}
+
+  		ReactDOM.render(
+  			<div>
+  				<HelloWorld greetTarget="Batman"/>
+			    <HelloWorld greetTarget="Iron Man"/>
+			    <HelloWorld greetTarget="Nicolas Cage"/>
+			    <HelloWorld greetTarget="Mega Man"/>
+			    <HelloWorld greetTarget="Bono"/>
+			    <HelloWorld greetTarget="Catwoman"/>
+  			</div>,
+  		document.querySelector("#container")
+		);   
+  	</script>
+  	<!-- NOTES: -->
+  	<!-- React components are reusable chunks of JavaScript that output (via JSX) HTML elements.-->
+  	<!-- To call a component, call the name ex. <HellowWorld/> -->
+  	<!-- Can pass in "arguments" aka PROPERTIES that alter what the component does. 
+  	Arguments in the function world are known as properties in the component world. -->
+  	<!-- greetTarget is the name of the property -->
+  	<!-- access a property is by referencing it via the this.props nameOfProperty -->
+  	<!-- In JSX, if you want something to get evaluated as an expression, you need to wrap it inside curly brackets. -->
+  	<!-- Pass in property in the component call: adding an attribute with the same name as the property followed by the value you want to pass in. - greetTarget="Batman" -->
+  	<!-- can have many properties in a component -->
+</body>
+</html>
